@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <!-- for font awesome icons -->
     <script src="https://kit.fontawesome.com/f8d50cbe91.js" crossorigin="anonymous"></script>
-<!-- Replicated with caveats from https://treact.owaiskhan.me/components/landingPages/SaaSProductLandingPage -->
+    <script src="./index.js"></script>
+
+<!-- Design Replicated with caveats from https://treact.owaiskhan.me/components/landingPages/SaaSProductLandingPage -->
 </head>
 <body>
     <header>
@@ -27,13 +29,39 @@
             </div>
             <nav>
                 <ul class="flex">
-                    <li><a href="" class="cursor__no">About</a></li>
-                    <li><a href="" class="cursor__no">Blog</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="" class="cursor__no">Contact Us</a></li>
-                    <li><a href="" class="cursor__no">Login</a></li>
-                    <li><button class="nav__btn button--hover cursor__no">Sign Up</button></li>
+                    <li><a href="" class="nav__link cursor__no">About</a></li>
+                    <li><a href="" class="nav__link cursor__no">Blog</a></li>
+                    <li><a href="#pricing" class="nav__link">Pricing</a></li>
+                    <li><a href="" class="nav__link cursor__no">Contact Us</a></li>
+                    <li><a href="" class="nav__link cursor__no">Login</a></li>
+                    <li><button class="nav__btn button--hover cursor__no nav__link">Sign Up</button></li>
                 </ul>
+                <button class="btn__menu" onclick="openMenu()">
+                    <i class="fas fa-bars text--accent"></i>
+                  </button>
+                  <div class="menu__backdrop">
+                    <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                      <i class="fas fa-times text--primary"></i>
+                    </button>
+                    <ul class="menu__links">
+                      <li class="menu__list">
+                        <a class="menu__link cursor__no" onclick="closeMenu()">About</a>
+                      </li>
+                      <li class="menu__list">
+                        <a  class="menu__link cursor__no" onclick="closeMenu()">Blog</a>
+                      </li>
+                      <li class="menu__list">
+                        <a href="#pricing" class="menu__link" onclick="closeMenu()">Pricing</a>
+                      </li>
+                      <li class="menu__list">
+                        <a  class="menu__link cursor__no" onclick="closeMenu()">Contact Us</a>
+                      </li>
+                      <li><a href="" class="nav__link cursor__no">Login</a></li>
+                      <li><button class="nav__btn button--hover cursor__no">Sign Up</button></li>
+
+
+                    </ul>
+                  </div>
             </nav>
         </div>
     </header>
@@ -166,8 +194,8 @@
                 <h3 class="section__title text--accent">Values</h3>
                 <h2 class="features__heading">We Always abide by Our <span class="text--accent">Principles</span></h2>
                 <p class="features__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda ex nam, quod commodi a quidem mollitia, neque ipsam iste aliquam exercitationem veritatis architecto. Molestiae suscipit tenetur recusandae incidunt est a magni aliquam quasi, earum eaque expedita ipsum iure assumenda soluta!</p>
-                <div class="flex">
-                    <div class="width-50">
+                <div class="flex stacked">
+                    <div class="width-50 ">
                         <div class="values__top">
                             <i class="fa-solid fa-dollar-sign"></i>
                             <h4>Affordable</h4>
@@ -195,7 +223,7 @@
             <h3 class="section__title text--accent">Pricing</h3>
             <h2 class="features__heading">Reasonable and Flexible <span class="text--accent">Plans</span></h2>
             <p class="features__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel eveniet quis aut, soluta in doloremque? Tempore aperiam impedit dolore natus.</p>
-            <div class="features__container flex">
+            <div class="features__container flex pricing__container">
                 <div class="pricing__card">
                     <div class="pricing__top green">
                         <h3 class="section__title">Personal</h3>
